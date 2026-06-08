@@ -1,0 +1,46 @@
+@import url('https://googleapis.com');
+:root {
+    --primary-color:#0d6efd;
+    --secondary-color:#198754;
+    --dark-bg:#111827;
+    --light-bg:#f8f9fa;
+    --text-dark:#1f2937;
+    --text-light:#f3f4f6;
+    --font-title:'plus jakarta sans',sans- serif;
+    --font-body:'inter',sans-serif;
+    --spacing-main: 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: var(--font-body);
+    color:var(--text-dark);
+    background-color:var(--light-bg);
+    transition: background-color 0,3s,color 0,3s;
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-title);
+    font-weight: 800;
+}
+.navbar{
+    transition: all 0,3s;
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+
+}
+.navbar-brand{
+        font-weight: 800;
+        color: var(--primary-color);
+}
+.nav-link{
+     font-weight: 500 !important;
+     column-rule: var(--text-dark);
+}
+.nav-link:hover{
+    color: var(--primary-color);
+}
