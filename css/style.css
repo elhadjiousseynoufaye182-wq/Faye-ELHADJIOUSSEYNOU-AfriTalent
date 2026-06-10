@@ -20,7 +20,7 @@ body{
     font-family: var(--font-body);
     color:var(--text-dark);
     background-color:var(--light-bg);
-    transition: background-color 0,3s,color 0,3s;
+    transition: background-color 0.3s,color 0.3s;
 
 }
 h1,h2,h3,h4,h5,h6{
@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 800;
 }
 .navbar{
-    transition: all 0,3s;
+    transition: all 0.3s;
     background-color: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
 
@@ -43,4 +43,119 @@ h1,h2,h3,h4,h5,h6{
 }
 .nav-link:hover{
     color: var(--primary-color);
+}
+#HERO{
+    padding: 100px 0 60px 0;
+    background-color: var(--bg-hero,#f8f9fa);
+}
+#HERO .container-hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#HERO h1{
+    font-family: var(--font-title),sans-serif;
+    font-size: clamp(2.2rem,4vw,3.8rem);
+    font-weight: 800;
+    line-height:1.15 ;
+    color: var(--text-dark,#212121);
+    margin-bottom: 20px;
+}
+#HERO h2{
+    font-size: clamp(1.1rem,1.8vw,1.3rem);
+    font-weight: 400;
+    line-height:1.6;
+    color: var(--text-muted#6c757d);
+    margin-bottom: 35px;
+}
+#HERO .hero-boutton{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+#HERO.btn{
+    border-radius: 50px;
+    padding: 12px 30px;
+    transition:transform 0.3s ease ,box-shadow 0.3s ease;
+}
+#HERO.btn:hover{
+    transform: translateY(-3px);
+}
+#HERO .image-hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#HERO.image-hero img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px;
+    transform: rotate(2deg);
+    transition: transform 0.4ease;
+}
+#HERO.image-hero img{
+    transform: rotate(0deg) scale(1.03);
+}
+#HERO  #compteurjava{
+    border-top:1px solid;
+    margin-top: 60px;
+    padding-top: 40px;
+
+}
+@media(max-width:991px){
+    #HERO .container-hero{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+#HERO .image-hero img {
+    transform: rotate(0deg);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#HERO .image-hero img {
+    transform: rotate(0deg);
+    max-width: 80%;
+}
+#HERO . .hero-boutton{
+    justify-content: center;
+}
+#HERO .d-flex{
+justify-content: center;
+}
+.bento-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+}
+.bento-card{
+    transition:transform 0.3s ease ,box-shadow 0.3s ease;
+}
+@media(min-width:992px){
+    .bento-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .bento-1 {
+        grid-column: span 2;
+    }
+}
+#CATEGORIES .card{
+border: 1px solid;
+border-radius: 20px;
+padding: 15px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+transition: transform 0.3 cubic-bezier(0.25, 1, 0.5, 1),
+box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+border-color 0.3S ease;
+
+}
+#CATEGORIES .card :hover{
+    transform: translateY(-8px);
+    border-color: rgba(13, 110, 253, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+
 }
