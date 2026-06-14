@@ -192,5 +192,90 @@ border-color 0.3S ease;
         margin-bottom: 25px;
     }
 }
+footer{
+    margin: 0%;
+}
+.navbar{
+     transition: all 0.1s ease ease-out
+}
+.navbar.navbar-scrolled{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    background-color:  rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(5px); ;
+}
+#back{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility:hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+#back.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+body.dark-mode{
+    background-color: #111827 !important;
+    color: #f3f4f6 !important;
+}
+body.dark-mode .navbar{
+    background-color: #111827 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .navbar.navbar-scrolled{
+    background-color: rgba(17, 24, 39, 0.95) !important;  
+}
+body.dark-mode .nav-link{
+    color:#f3f4f6 !important;
+}
+body.dark-mode .nav-link:hover{
+    color:#0d6efd !important;
+}
+body.dark-mode #HERO,
+body.dark-mode .bento-card,
+body.dark-mode .card,
+body.dark-mode .CATEGORIES,
+body.dark-mode .TEMOIGNAGES{
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-color: rgba(255, 255, 255, 0.08)
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode .card-title,
+body.dark-mode blockquote p,
+body.dark-mode cite{
+    color: #ffffffff !important ;
+}
+body.dark-mode .text-muted,
+body.dark-mode .card-text{
+      color: #9ca3af !important;
+}
+body.dark-mode .btn-outline-dark {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+body.dark-mode .btn-outline-dark :hover{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}
+
+
+
 
 
