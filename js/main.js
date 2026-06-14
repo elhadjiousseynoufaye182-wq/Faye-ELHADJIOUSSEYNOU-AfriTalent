@@ -52,3 +52,34 @@ backBtn.addEventListener("click",function (){
 });
 }
 });
+const compteurs = document.querySelectorAll('#compteurjava h3');
+const zoneCompteurs = document.getElementById('compteurjava');
+const animerCompteur = (compteur)=> {
+    const cible = parseInt(compteur.getAttribute ('nombre'),10);
+    const duree = 2000;
+    let debut = null;
+    const etape = (horodatage) => {
+        if (!debut) debut = horodatage;
+        const progression = horodatage - debut;
+        const valeur=  Math.min(Math.floor((progression / duree) * cible), cible);
+            compteur.textContent = `+${valeur}`;
+        if (progression < duree){
+            window.requestAnimationFrame(etape);
+        } else{
+            compteur.textContent= `+${cible}`;
+        }
+    };
+     window.requestAnimationFrame(etape);
+    };
+     if(zoneCompteurs && compteurs.length >0 ){
+        const observateur = new IntersectionObserver((entrees, obs) => {
+            entrees.forEach(entree => {
+                if (entree.isIntersecting){
+                    compteurs.forEach(compteur => animerCompteur(compteur));
+                    obs.unobserve(entree.target);
+                }
+     });
+}, { threshold: 0.2 }); 
+
+        observateur.observe(zoneCompteurs);
+}
