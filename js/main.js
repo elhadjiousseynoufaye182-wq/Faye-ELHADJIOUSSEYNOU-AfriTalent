@@ -82,4 +82,76 @@ const animerCompteur = (compteur)=> {
 }, { threshold: 0.2 }); 
 
         observateur.observe(zoneCompteurs);
+};
+const boutonsFiltre = document.querySelectorAll(".btn-filtre");
+const cartesFreelances = document.querySelectorAll(".freelance-card");
+if (boutonsFiltre.length > 0 && cartesFreelances.length > 0) {
+    boutonsFiltre.forEach(bouton => {
+        bouton.addEventListener("click",function (){
+            const categorieSelectionnee = bouton.getAttribute("data-filtre");
+            boutonsFiltre.forEach(b => {
+                b.classList.remove("btn-primary");
+                b.classList.add ("btn-outline-primary");
+            });
+            bouton.classList.remove("btn-outline-primary");
+            bouton.classList.add ("btn-primary");
+            cartesFreelances.forEach(carte => {
+            const categoriecarte= carte.getAttribute("data-filtre");
+             if (categorieSelectionnee === "tous" || categoriecarte === categorieSelectionnee) {
+                    carte.style.display = "block";
+                } else {
+                    carte.style.display = "none";
+                }
+        });
+    });
+});
+}
+const contactForm = document.getElementById("contact-form");
+if (contactForm){
+    contactForm.addEventListener("submit", function (e) {
+            e.preventDefault(); 
+            let formulaireValide = true;
+            const nom = document.getElementById("nom");
+            const prenom = document.getElementById("prenom");
+            const email = document.getElementById("email");
+            const message = document.getElementById("message");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function validerChamps(champ, condition, messageErreur) {
+                const conteneurErreur = document.getElementById(`erreur-${champ.id}`);
+                if (condition) {
+                    champ.classList.remove("is-invalid");
+                    champ.classList.add("is-valid");
+                    if (conteneurErreur) conteneurErreur.textContent = "";
+                } else {
+                    champ.classList.remove("is-valid");
+                     champ.classList.add("is-invalid");
+                    if (conteneurErreur) conteneurErreur.textContent = messageErreur;
+                    formulaireValide = false;
+                }
+            }
+
+            validerChamps(nom ,nom.value.trim() !== "", "Le nom est obligatoire.");
+            validerChamps(prenom ,prenom.value.trim() !== "", "Le prenom est obligatoire.");
+            validerChamps(email ,emailRegex.test(email.value.trim()), "Veuillez entrer un email valide.");
+            validerChamps(message ,message.value.trim().length >= 20, "Le message doit contenir au moins 20 caractères.");
+            if (formulaireValide){
+                const zoneSucces = document.getElementById("message-succes");
+                if (zoneSucces){
+                    zoneSucces.innerHTML =`
+                    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                            <strong>Succès !</strong> Votre message a bien été envoyé à l'équipe AfriTalent.
+                            <button type="button" class="btn-close" data-bs-dismissBox="alert" aria-label="Close"></button>
+                        </div>`;
+                }
+                         contactForm.reset();
+                        [nom,prenom,email,message].forEach(c => {
+                        if (c)  c.classList.remove("is-valid");
+            });
+                }
+                       
+                });
+
+            
+
 }
