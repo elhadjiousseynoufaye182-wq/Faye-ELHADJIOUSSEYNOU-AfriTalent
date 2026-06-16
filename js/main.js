@@ -1,3 +1,4 @@
+// Gestion du mode sombre 
 document.addEventListener("DOMContentLoaded", function () {
     const tToggleBtn = document.getElementById("theme-toggle");
     const tToggleIcon= document.getElementById("icon-toggle");
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
+ // Effet visuel au scroll
     }
     const navbar = document.querySelector(".navbar");
     if (navbar){
@@ -52,6 +54,7 @@ backBtn.addEventListener("click",function (){
 });
 }
 });
+// Animation des compteurs de  statistiques
 const compteurs = document.querySelectorAll('#compteurjava h3');
 const zoneCompteurs = document.getElementById('compteurjava');
 const animerCompteur = (compteur)=> {
@@ -83,6 +86,7 @@ const animerCompteur = (compteur)=> {
 
         observateur.observe(zoneCompteurs);
 };
+// Filtrage
 const boutonsFiltre = document.querySelectorAll(".btn-filtre");
 const cartesFreelances = document.querySelectorAll(".freelance-card");
 if (boutonsFiltre.length > 0 && cartesFreelances.length > 0) {
@@ -105,6 +109,7 @@ if (boutonsFiltre.length > 0 && cartesFreelances.length > 0) {
         });
     });
 });
+// Validation du formulaire contact
 }
 const contactForm = document.getElementById("contact-form");
 if (contactForm){

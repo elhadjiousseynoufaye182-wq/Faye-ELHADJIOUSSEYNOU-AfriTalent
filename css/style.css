@@ -1,3 +1,4 @@
+/* Variable et configuration globale */
 @import url('https://googleapis.com');
 :root {
     --primary-color:#0d6efd;
@@ -27,6 +28,7 @@ h1,h2,h3,h4,h5,h6{
     font-family: var(--font-title);
     font-weight: 800;
 }
+/* Interface et composante(Navbar,Hero,Cards) */
 .navbar{
     transition: all 0.3s;
     background-color: rgba(255,255,255,0.95);
@@ -126,6 +128,7 @@ h1,h2,h3,h4,h5,h6{
 #HERO .d-flex{
 justify-content: center;
 }
+/* Bento grid  */
 }
 .bento-grid{
     display: grid;
@@ -136,6 +139,7 @@ justify-content: center;
 .bento-card{
     transition:transform 0.3s ease ,box-shadow 0.3s ease;
 }
+/* Responsive */
 @media(min-width:992px){
     .bento-grid{
         grid-template-columns: repeat(3,1fr);
@@ -225,6 +229,7 @@ footer{
     visibility: visible;
     transform: translateY(0);
 }
+/* Effet (sombre/clair) */
 body.dark-mode{
     background-color: #111827 !important;
     color: #f3f4f6 !important;
